@@ -20,7 +20,11 @@
     "rabbitmq",
     "meow wolf"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "node-red": {
+    "version": ">=2.0.0",
     "nodes": {
       "amqp-in": "build/src/nodes/amqp-in.js",
       "amqp-out": "build/src/nodes/amqp-out.js",
