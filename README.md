@@ -2,7 +2,9 @@
 # @topcs/node-red-contrib-amqp-topcs
  fork of
 
- ![](https://github.com/MeowWolf/node-red-contrib-amqp/workflows/Lint,%20Build,%20Test/badge.svg?branch=master)
+#https://github.com/MeowWolf/node-red-contrib-amqp
+
+and the work of Amo DelBello at MeowWolf
 
 with some fixes
 
