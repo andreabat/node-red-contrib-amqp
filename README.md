@@ -1,15 +1,17 @@
-![](https://github.com/MeowWolf/node-red-contrib-amqp/workflows/Lint,%20Build,%20Test/badge.svg?branch=master)
 
+
+# @topocs/node-red-contrib-amqp
+this is a fork of
 # @meowwolf/node-red-contrib-amqp
 
-AMQP nodes for node-red
+AMQP nodes for node-red with som of my fixes
 
 ## Installation
 
 Install via the Palette Manager or from within your node-red directory (typically `~/.node-red`) run:
 
 ```
-npm i @meowwolf/node-red-contrib-amqp
+npm i @topcs/node-red-contrib-amqp-v2
 ```
 
 ## Usage
