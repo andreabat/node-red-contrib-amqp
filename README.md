@@ -1,6 +1,10 @@
-![](https://github.com/MeowWolf/node-red-contrib-amqp/workflows/Lint,%20Build,%20Test/badge.svg?branch=master)
 
-# @meowwolf/node-red-contrib-amqp
+# @topcs/node-red-contrib-amqp-v2 
+ fork of
+
+ ![](https://github.com/MeowWolf/node-red-contrib-amqp/workflows/Lint,%20Build,%20Test/badge.svg?branch=master)
+
+with some fixes
 
 AMQP nodes for node-red
 
@@ -9,7 +13,7 @@ AMQP nodes for node-red
 Install via the Palette Manager or from within your node-red directory (typically `~/.node-red`) run:
 
 ```
-npm i @meowwolf/node-red-contrib-amqp
+npm i @topcs/node-red-contrib-amqp-v2
 ```
 
 ## Usage
