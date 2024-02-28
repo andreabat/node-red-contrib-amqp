@@ -51,7 +51,11 @@ module.exports = function (RED: NodeRedApp): void {
           self.status(NODE_STATUS.Connected)
         }
       } catch (e) {
-        if (e.code === ErrorType.ConnectionRefused || e.isOperational) {
+        if (
+          e.code === ErrorType.ConnectionRefused ||
+          e.isOperational ||
+          e.code === ErrorType.ConnectionReset
+        ) {
           await reconnect()
         } else if (e.code === ErrorType.InvalidLogin) {
           self.status(NODE_STATUS.Invalid)

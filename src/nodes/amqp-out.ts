@@ -28,6 +28,7 @@ module.exports = function (RED: NodeRedApp): void {
         new Promise<void>(resolve => {
           reconnectTimeout = setTimeout(async () => {
             try {
+              console.log('Attempting to reconnect to broker')
               await initializeNode(self, true)
               resolve()
             } catch (e) {
@@ -37,10 +38,13 @@ module.exports = function (RED: NodeRedApp): void {
         })
 
       try {
+        console.log('Connecting to broker , reconnecting: ', reconnecting)
         const connection = await amqp.connect()
 
         // istanbul ignore else
         if (connection) {
+          console.log('Initializing AMQP Out node...')
+          console.log(connection)
           await amqp.initialize()
           if (reconnecting) {
             self.removeAllListeners('input')
@@ -115,13 +119,20 @@ module.exports = function (RED: NodeRedApp): void {
 
           // When the server goes down
           connection.once('close', async e => {
+            console.log('Connection closed', e)
             e && (await reconnect())
           })
 
           self.status(NODE_STATUS.Connected)
         }
       } catch (e) {
-        if (e.code === ErrorType.ConnectionRefused || e.isOperational) {
+        console.log('Error in AmqpOut', e.code)
+        if (
+          e.code === ErrorType.ConnectionRefused ||
+          e.isOperational ||
+          e.code === ErrorType.ConnectionReset
+        ) {
+          console.log("We're going to reconnect")
           await reconnect()
         } else if (e.code === ErrorType.InvalidLogin) {
           self.status(NODE_STATUS.Invalid)

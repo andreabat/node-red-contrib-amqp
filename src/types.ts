@@ -89,6 +89,7 @@ export enum ManualAckType {
 export enum ErrorType {
   InvalidLogin = 'ENOTFOUND',
   ConnectionRefused = 'ECONNREFUSED',
+  ConnectionReset = 'ECONNRESET',
 }
 
 export enum NodeType {

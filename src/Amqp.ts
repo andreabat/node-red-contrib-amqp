@@ -87,7 +87,10 @@ export default class Amqp {
   }
 
   public async initialize(): Promise<void> {
+    console.log('Creating channel   ')
     await this.createChannel()
+    console.log('Assert exchange   ')
+
     await this.assertExchange()
   }
 
