@@ -1,7 +1,7 @@
 {
   "name": "@topcs/node-red-contrib-amqp-topcs",
   "license": "ISC",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Amqp nodes for node-red by topcs",
   "main": "index.js",
   "scripts": {
